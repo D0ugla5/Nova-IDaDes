@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Adivinhação</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Jogo de Adivinhação</h1>
+  <p>Tente adivinhar o número entre 1 e 100.</p>
+  <input type="number" id="guessField">
+  <button onclick="checkGuess()">Adivinhar!</button>
+  <button onclick="resetGame()">Reset</button>
+  <p id="message"></p>
+
+  <script>
+    let randomNumber;
+    let attempts = 0;
+
+    resetGame();
+
+    function resetGame() {
+      randomNumber = Math.floor(Math.random() * 100) + 1;
+      attempts = 0;
+      setMessage("");
+      document.getElementById("guessField").value = "";
+      document.getElementById("guessField").disabled = false;
+      document.querySelector("button").disabled = false;
+    }
+
+    function checkGuess() {
+      const guess = parseInt(document.getElementById("guessField").value);
+      attempts++;
+
+      if (isNaN(guess) || guess < 1 || guess > 100) {
+        setMessage("Por favor, insira um número válido entre 1 e 100.");
+        return;
+      }
+
+      if (guess === randomNumber) {
+        setMessage(`Parabéns! Você acertou o número ${randomNumber} em ${attempts} tentativas.`);
+        disableInput();
+      } else if (guess < randomNumber) {
+        setMessage("O número é maior. Tente novamente!");
+      } else {
+        setMessage("O número é menor. Tente novamente!");
+      }
+    }
+
+    function setMessage(message) {
+      document.getElementById("message").textContent = message;
+    }
+
+    function disableInput() {
+      document.getElementById("guessField").disabled = true;
+      document.querySelector("button").disabled = true;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+header{
+    width: 100vw;
+    height: 10vw;
+    background-color: rgb(200, 5, 5);
+    color: white;
+    border-bottom: 10px;
+}
+html{
+    background-color: white;
+    background-image: url();
+    text-align: center;
+}
+footer{
+    width: 100vw;
+    height: 10vw;
+    background-color: rgb(200, 5, 5);
+    color: black;
+}
+button{
+    background-color: white;
+}
+h1{
+    color: black;
+    text-shadow: 1px 2px white;
+    padding-top: 15px;
+    padding-left: 130px;
+    font-size: 40px;
+}
+h2{
+    color: red;
+}
+h3{
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: black;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+#hcount{
+    display: flex;
+    flex-direction: row;
+}
+.car{
+    display: block;
+    width: 5%;
+    color: antiquewhite;
+    text-align: center;
+    text-transform: lowercase;
+    text-decoration: none;
+    margin-left: 1000px;
+}
+#log{
+    display: block;
+    width: 6.5%;
+    color: black;
+}
+.container{
+    background-color: white;
+    min-height: 60vw;
+    padding: 60px;
+}
+h2{
+    color: white;
+    text-align: center;
+}
+.product-image{
+    height: 300px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    border: 5px red solid;
+    border-radius: 10px;
+}
+.card{
+    width: 31%;
+    display: inline-block;
+}
+.bold{
+    font-weight: bold;
+}
+.btn{
+    color: white;
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    background-color: white;
+    padding: 15px;
+    transition: 0.5s;
+}
+.btn:hover{
+    background-color: black;
+}
